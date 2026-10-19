@@ -30,3 +30,44 @@ INSERT INTO clientes (nombre, telefono, email) VALUES
 ('Ana Gutiérrez', '76789012', 'ana.gutierrez@gmail.com');
 
 
+
+-- 10 pedidos (la clienta 6 no tiene pedidos a propósito)
+INSERT INTO pedidos (cliente_id, fecha, estado) VALUES
+(1, '2026-09-01', 'entregado'),
+(1, '2026-09-08', 'entregado'),
+(1, '2026-09-20', 'pendiente'),
+(2, '2026-09-03', 'entregado'),
+(2, '2026-09-15', 'cancelado'),
+(3, '2026-09-10', 'entregado'),
+(3, '2026-09-22', 'entregado'),
+(3, '2026-10-02', 'pendiente'),
+(4, '2026-10-05', 'entregado'),
+(5, '2026-10-10', 'pendiente');
+
+-- 25 líneas de detalle (pedido_id, producto_id, cantidad, precio_unitario)
+INSERT INTO detalle_pedido (pedido_id, producto_id, cantidad, precio_unitario) VALUES
+(1, 1, 2, 12.00),
+(1, 5, 1, 18.50),
+(1, 7, 4, 3.50),
+(2, 4, 6, 15.00),
+(2, 8, 2, 7.00),
+(2, 2, 1, 9.50),
+(3, 9, 1, 28.00),
+(3, 11, 2, 16.50),
+(3, 12, 3, 4.00),
+(4, 3, 3, 6.00),
+(4, 6, 2, 5.50),
+(4, 1, 1, 12.00),
+(5, 10, 2, 8.00),
+(5, 12, 5, 4.00),
+(5, 7, 6, 3.50),
+(6, 4, 4, 15.00),
+(6, 5, 2, 18.50),
+(7, 2, 3, 9.50),
+(7, 6, 1, 5.50),
+(8, 9, 2, 28.00),
+(8, 10, 1, 8.00),
+(9, 11, 1, 16.50),
+(9, 8, 3, 7.00),
+(10, 1, 3, 12.00),
+(10, 3, 2, 6.00);
