@@ -1,1 +1,1 @@
-# Negocio Roy Mamani - Versión B
+# Negocio Roy Mamani
