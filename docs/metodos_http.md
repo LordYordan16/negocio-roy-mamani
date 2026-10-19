@@ -53,8 +53,3 @@ API de prueba: https://jsonplaceholder.typicode.com/posts
 - Body: no lleva
 - Código de estado: `200 OK`
 - Respuesta: `{}`
-
-## Diferencia entre PUT y PATCH
-<Escríbela tú, en 3 o 4 líneas. Idea: PUT manda el recurso completo y lo reemplaza,
-por lo que lo que no envías podría perderse. PATCH manda solo lo que cambia y el resto
-se conserva. Usa de ejemplo lo que viste: en el PATCH, la respuesta mantuvo el `body` original.>
