@@ -53,3 +53,14 @@ API de prueba: https://jsonplaceholder.typicode.com/posts
 - Body: no lleva
 - Código de estado: `200 OK`
 - Respuesta: `{}`
+
+
+## Diferencia entre PUT y PATCH
+
+Los dos sirven para modificar un recurso que ya existe, pero lo hacen de forma distinta.
+
+**PUT reemplaza el recurso completo.** Hay que enviar todos los campos (`id`, `title`, `body` y `userId`). Si se omite alguno, el recurso queda sin él, porque PUT toma lo enviado como la nueva versión entera.
+
+**PATCH modifica solo una parte.** Se envían únicamente los campos que cambian. En mi prueba envié solo `{ "title": "Solo cambio el título" }` y la respuesta devolvió el post completo: el título nuevo y el `body` original intacto.
+
+En resumen: uso PUT cuando quiero sustituir todo el recurso, y PATCH cuando solo quiero cambiar uno o dos campos sin tocar el resto. Como JSONPlaceholder solo simula los cambios, un GET posterior sigue mostrando el post original.
