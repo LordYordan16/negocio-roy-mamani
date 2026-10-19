@@ -30,7 +30,7 @@ async function buscarPokemon(nombre) {
     }
 
     const data = await response.json();
-    console.log(data);
+    mostrarPokemon(data);
     mostrarMensaje('');
   } catch (error) {
     if (error instanceof TypeError) {
@@ -40,6 +40,24 @@ async function buscarPokemon(nombre) {
     }
   }
 }
+function mostrarPokemon(data) {
+  const nombre = data.name.charAt(0).toUpperCase() + data.name.slice(1);
+  const imagen =
+    data.sprites.other['official-artwork'].front_default || data.sprites.front_default;
+  const tipos = data.types.map((t) => t.type.name).join(', ');
+  const pesoKg = data.weight / 10;   // la API entrega hectogramos
+  const alturaM = data.height / 10;  // la API entrega decímetros
+
+  elNombre.textContent = nombre;
+  elImagen.src = imagen;
+  elImagen.alt = `Imagen de ${nombre}`;
+  elTipos.textContent = tipos;
+  elPeso.textContent = `${pesoKg} kg`;
+  elAltura.textContent = `${alturaM} m`;
+  resultado.classList.remove('oculto');
+}
+
+
 
 form.addEventListener('submit', (evento) => {
   evento.preventDefault();
